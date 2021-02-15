@@ -1,27 +1,43 @@
 h1{
     font-family: 'Courier New', Courier, monospace;
     color: aliceblue;
+    text-decoration: underline;
+    font-size: 35pt;
 }
 
 h2{
     font-family: 'Courier New', Courier, monospace;
     color: aliceblue;
+    text-decoration: underline;
+    font-size: 35pt;
 }
 
 p{
     font-family: monospace;
-    font-size: large;
+    font-size: xx-large;
     color: aliceblue;
 }
 
 body{
-    background-color: midnightblue;
+    background-color: #181a1b;
     margin-right: 15%;
+    margin-left: 3%;
 }
 
 a{
     color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
 }
 
+ul{
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+}
 
+li{
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+}
 
