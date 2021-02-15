@@ -46,3 +46,16 @@ footer{
     font-family: 'Courier New', Courier, monospace;
 }
 
+.mainNav {
+    white-space: nowrap;
+}
+   
+.mainNav * {
+    display: inline;
+    margin-right: 3%;
+}
+
+a:hover {
+    color: blue;
+  }
+
