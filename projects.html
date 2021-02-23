@@ -11,6 +11,7 @@
       <p style="text-align: left;"><a href="main.html">Home</a></p>
       <p style="text-align: center;"><a href="about.html">About</a></p>
       <p style="text-align: right;"><a href="projects.html">Project List</a></p>      
+      <p style="text-align: right;"><a href="hobbies.html">Hobbies/Extracurriculars</a></p>  
     </div>
     
     <br>
@@ -23,6 +24,71 @@
       by millions. Even with this in mind, I hope that my conclusions and insight come from an angle for which you have not previously thought.
     </p>
     <ul>
+        <li>
+          PIC Math Project with the Nevada National Security Site (NNSS), funded by the NSF:
+          <ul>
+            <li> 
+              <p>
+                This project was part of a PIC Math course at Ouachita Baptist University that was centered around the condition of some of the U.S. nuclear weapons stockpile. We were
+                given an industry liaison, Dr. Marylesa Howard of the NNSS, who is a brilliant mathematician there at the site. She assisted us in the general understanding of the problem at hand
+                and relayed any information from her team at the site in Nevada. 
+              </p>
+            </li>
+            <li>
+              <p>
+                At the NNSS, experiments are conducted on portions of the United States nuclear weapons stockpile to see how they perform after years of isolation without use.
+                Cygnus 1 and Cygnus 2 are two massive, incredibly powerful x-ray machines located at the site, and they are used to take snapshots of these weapons being detonated
+                with other various objects alongside them. These experiments cost tens of millions of dollars to set up in many occasions. If all goes well, the weapons and materials are
+                destroyed and both Cygnus machines have taken their shots without error. Occasionally, Cygnus 1 or Cygnus 2 will have problems as these machines are decades old. If the machines fail 
+                in the midst of an explosion, the millions of dollars put into the experiment have been wasted because there is no way of telling what happened within the explosion, except
+                for the obvious fact that everything has been destroyed. Each machine has 31 diagnostics that are used to determine how each part of the machine performs during the shot.
+                Many hours after a shot, the engineers on site are able to determine how well the machines performed based on the radiation dose each one produced. The higher the radiation, the better.
+              </p>
+            </li>
+            <li>
+              <p>
+                Our job was to predict when the machines would fail, given 100 shots worth of data for each diagnostic. The raw data for each diagnostic always contained two features, for which 
+                there were anywhere from 10,000 to 100,000 observations. We found that much of the data did not match up very well-that is, older data had been measured on different scales than the newer data.
+                This reduced our ability to work with machine learning algorithms. Even 100 shots would be stretching it, but now we were left with few options.
+              </p>
+            </li>
+            <li>
+              <p>
+                I began importing the data into RStudio and started looking at some basic characteristics such as mean, median, maximum, minimum, etc., and I began to notice some correlations between one of 
+                the diagnostics and the overall radiation dose produced by both machines. The diagnostic's maxmimum value turned out to be a very good predictor for the quality of the shot. I began to make plots:
+              </p>
+            </li>
+            <img src="images_pdfs/pic_math1.PNG" alt="Linear Regression for the diagnostic." style="border-radius: 3%;">
+            <li>
+              <p>
+                Here, you can see the radiation dose produced by the machines as a function of the maximum value of the PinM diagnostic. As the PinM diagnostic began to reach larger values, 
+                the machine output a better shot. The R value came out to 0.877, a very strong correlation. Next, we'll view this data with a boxplot for bivariate data:
+              </p>
+            </li>
+            <img src="images_pdfs/pic_math2.PNG" alt="Bivariate Generalization of the boxplot for PinM max values and rad doses." style="border-radius: 3%;">
+            <li>
+              <p>
+                In this plot, I used the aplpack package for R to see if there were any outliers present in the data. Since this is bivariate data, a standard boxplot would not suffice. The aplpack
+                package gives us the ability to use the bagplot() function in order to view this for our data. Notice there are no outliers present. This plot was used to further strengthen the claim that 
+                PinM was a good predictor for how well the machine performed. 
+              </p>
+            </li>
+            <li>
+              <p>
+                We relayed this information to Dr. Marylesa Howard immediately. She had to ask one of the engineers on site for a response. We were told that this diagnostic was actually used 
+                as a way to determine how well the machine performed immediately after a shot because it takes hours for the radiation doses to come back. This was a great accomplishment!
+              </p>
+            </li>
+            <li>
+              <p>
+                With Covid-19 as a backdrop for the semester, it was especially difficult given that we were all remote and unable to meet in person. This is around the time the project came 
+                to a halt. We were unable to reach the goal of predicting when the machines would fail, but our research will certainly benefit the next group that works on this project. Aside from our
+                achievements, Dr. Howard was thankful for our contributions throughout the semester and let us know we were one of the best groups she has ever worked with in the PIC Math program.
+              </p>
+            </li>
+          </ul>
+        </li>
+
         <li>
           Phone Data Project: <a href="images_pdfs/phone_data.pdf">View R Notebook</a>
           <ul>
