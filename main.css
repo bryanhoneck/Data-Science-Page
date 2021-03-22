@@ -20,7 +20,7 @@ p{
 
 body{
     background-color: #181a1b;
-    margin-right: 25%;
+    margin-right: 10%;
     margin-left: 3%;
 }
 
@@ -48,11 +48,13 @@ footer{
 
 .mainNav {
     white-space: nowrap;
+    display: flex;
+    justify-content: space-evenly;
 }
-   
-.mainNav * {
-    display: inline;
-    margin-right: 3%;
+
+.mainNav a{
+    justify-content: space-between;
+    font-variant: small-caps;
 }
 
 a:hover {
