@@ -7,175 +7,174 @@
     <link rel="shortcut icon" href="images_pdfs/favicon.png" type="image/x-icon">
   </head>
   <body>
-    <div class="mainNav">
-      <p style="text-align: left;"><a href="main.html">Home</a></p>
-      <p style="text-align: center;"><a href="about.html">About</a></p>
-      <p style="text-align: right;"><a href="projects.html">Project List</a></p>      
-      <p style="text-align: right;"><a href="hobbies.html">Hobbies/Extracurriculars</a></p>  
-      <img src="images_pdfs/main_2.png" alt="bh logo" style="border-radius: 50%; height: 10%; width: 10%; float: right;">
+    <div class="mainProjects">
+      <div class="mainNav">
+        <p style="text-align: left;"><a href="main.html">Home</a></p>
+        <p style="text-align: center;"><a href="about.html">About</a></p>
+        <p style="text-align: right;"><a href="projects.html">Project List</a></p>      
+        <p style="text-align: right;"><a href="hobbies.html">Hobbies/Extracurriculars</a></p>  
+        <img src="images_pdfs/main_2.png" alt="bh logo" style="border-radius: 50%; height: 10%; width: 10%; float: right;">
+      </div>
+      
+      <br>
+      <hr>
+      
+      <h1>List of Projects:</h1>
+
+      <p>
+        These projects are in no particular order. I have attempted to put some of the more interesting projects towards the top. Some of these datasets are very common and have been explored
+        by millions. Even with this in mind, I hope that my conclusions and insight come from an angle for which you have not previously thought.
+      </p>
+      <ul>
+          <li>
+            PIC Math Project with the Nevada National Security Site (NNSS), funded by the NSF:
+            <ul>
+              <li> 
+                <p>
+                  This project was part of a PIC Math course at Ouachita Baptist University that was centered around the condition of some of the U.S. nuclear weapons stockpile. We were
+                  given an industry liaison, Dr. Marylesa Howard of the NNSS, who is a brilliant mathematician there at the site. She assisted us in the general understanding of the problem at hand
+                  and relayed any information from her team at the site in Nevada. 
+                </p>
+              </li>
+              <li>
+                <p>
+                  At the NNSS, experiments are conducted on portions of the United States nuclear weapons stockpile to see how they perform after years of isolation without use.
+                  Cygnus 1 and Cygnus 2 are two massive, incredibly powerful x-ray machines located at the site, and they are used to take snapshots of these weapons being detonated
+                  with other various objects alongside them. These experiments cost tens of millions of dollars to set up in many occasions. If all goes well, the weapons and materials are
+                  destroyed and both Cygnus machines have taken their shots without error. Occasionally, Cygnus 1 or Cygnus 2 will have problems as these machines are decades old. If the machines fail 
+                  in the midst of an explosion, the millions of dollars put into the experiment have been wasted because there is no way of telling what happened within the explosion, except
+                  for the obvious fact that everything has been destroyed. Each machine has 31 diagnostics that are used to determine how each part of the machine performs during the shot.
+                  Many hours after a shot, the engineers on site are able to determine how well the machines performed based on the radiation dose each one produced. The higher the radiation, the better.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Our job was to predict when the machines would fail, given 100 shots worth of data for each diagnostic. The raw data for each diagnostic always contained two features, for which 
+                  there were anywhere from 10,000 to 100,000 observations. We found that much of the data did not match up very well-that is, older data had been measured on different scales than the newer data.
+                  This reduced our ability to work with machine learning algorithms. Even 100 shots would be stretching it, but now we were left with few options.
+                </p>
+              </li>
+              <li>
+                <p>
+                  I began importing the data into RStudio and started looking at some basic characteristics such as mean, median, maximum, minimum, etc., and I began to notice some correlations between one of 
+                  the diagnostics and the overall radiation dose produced by both machines. The diagnostic's maxmimum value turned out to be a very good predictor for the quality of the shot. I began to make plots:
+                </p>
+              </li>
+              <img src="images_pdfs/pic_math1.PNG" alt="Linear Regression for the diagnostic." style="border-radius: 3%;">
+              <li>
+                <p>
+                  Here, you can see the radiation dose produced by the machines as a function of the maximum value of the PinM diagnostic. As the PinM diagnostic began to reach larger values, 
+                  the machine output a better shot. The R value came out to 0.877, a very strong correlation. Next, we'll view this data with a boxplot for bivariate data:
+                </p>
+              </li>
+              <img src="images_pdfs/pic_math2.PNG" alt="Bivariate Generalization of the boxplot for PinM max values and rad doses." style="border-radius: 3%;">
+              <li>
+                <p>
+                  In this plot, I used the aplpack package for R to see if there were any outliers present in the data. Since this is bivariate data, a standard boxplot would not suffice. The aplpack
+                  package gives us the ability to use the bagplot() function in order to view this for our data. Notice there are no outliers present. This plot was used to further strengthen the claim that 
+                  PinM was a good predictor for how well the machine performed. 
+                </p>
+              </li>
+              <li>
+                <p>
+                  We relayed this information to Dr. Marylesa Howard immediately. She had to ask one of the engineers on site for a response. We were told that this diagnostic was actually used 
+                  as a way to determine how well the machine performed immediately after a shot because it takes hours for the radiation doses to come back. This was a great accomplishment!
+                </p>
+              </li>
+              <li>
+                <p>
+                  With Covid-19 as a backdrop for the semester, it was especially difficult given that we were all remote and unable to meet in person. This is around the time the project came 
+                  to a halt. We were unable to reach the goal of predicting when the machines would fail, but our research will certainly benefit the next group that works on this project. Aside from our
+                  achievements, Dr. Howard was thankful for our contributions throughout the semester and let us know we were one of the best groups she has ever worked with in the PIC Math program.
+                </p>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            Phone Data Project: <a href="R_notebooks/probstats_hw1.nb.html">View R Notebook</a>
+            <ul>
+              <li>
+                <p>This data was taken from a fictional problem located on Kaggle.
+                  The problem involves a businessman who is attempting to start up his own phone company. He has been
+                  gathering data on thousands of different types of phones over the years. His goal is to be able to predict what price
+                  range a phone is in given the remaining 20 attributes listed in the structure of this data frame (i.e. battery capacity, phone weight, RAM, etc.).
+              </p>
+              <p>
+                <img src="images_pdfs/phone_data_2.PNG" alt="snippet of data frame" style="border-radius: 5%;">
+                <img src="images_pdfs/phone_data_3.PNG" alt="snippet of ggplot2 example from project" style="border-radius: 5%">
+              </p>
+              </li>
+              <li>
+                <p>
+                In this project, I ran the k-means clustering algorithm on the two most telling attributes and wrote a report at the very end of the notebook based on my observations.
+                </p>
+              </li>
+            </ul>
+          </li>
+
+          <br>
+
+          <li>
+            Loan Data with Support Vector Machines: <a href="R_notebooks/svm_loan_project.nb.html">View R Notebook</a>
+            <ul>
+              <li>
+                <p>
+                  The given dataset came from LendingClub.com. The data had certain financial information on people who had taken out loans. The last attribute in this dataset was whether or not 
+                  the person ultimately paid off their loans in their entirety. This project had a basic implementation of the svm() function in R. This project originally came from an assignment 
+                  I worked on as part of a course on Udemy. 
+                </p>
+                <p>
+                  <img src="images_pdfs/loan_data_2.PNG" alt="code snippet" style="border-radius: 5%">
+                  <img src="images_pdfs/loan_data_3.PNG" alt="plot snippet" style="border-radius: 5%">
+                </p>
+              </li>
+              <li>
+                <p>
+                  The run time for the tune() function became lengthy even with only two values for cost and gamma. I would have run more combinations, but my machine by itself certainly has its limits.
+                  With distributed resources, we would be able to produce an even more accurate model.
+                </p>
+              </li>
+            </ul>
+          </li>
+
+          <br>
+
+          <li>
+            Iris Data Set: <a href="R_notebooks/knn_practice2.nb.html">View R Notebook</a>
+            <ul>
+              <li>
+                <p>It's hard to find a data scientist who has never come across the Iris data set. It is a small but super important data set for learning how to implement the k-means clustering
+                  algorithm. In this project, I run both the K-means clustering and K-nearest neighbors algorithms. It is obvious that the K-means clustering algorithm does a very good job
+                  of predicting the species for each flower. 
+              </p>
+              <p>
+                <img src="images_pdfs/iris_data_2.PNG" alt="silhouette plot" style="border-radius: 5%">
+                <img src="images_pdfs/iris_data_3.PNG" alt="error rate plot" style="border-radius: 5%">
+              </p>
+              </li>
+            </ul>
+          </li>
+
+          <br>
+
+          <li>
+            Advertising Data: <a href="R_notebooks/kmeans_practice.nb.html">View R Notebook</a>
+            <ul>
+              <li>
+                <p>
+                  The given dataset has 1,000 records of users with 10 attributes. We are trying to predict whether or not they clicked on an advertisement, which is denoted as 0 or 1 in the 
+                  last column of the data frame. We want to find out which users are more likely to click on the advertisements based on the other given characteristics in the data frame.
+                </p>
+                <p>
+                  <img src="images_pdfs/advertising_data_2.PNG" alt="impute age function" style="border-radius: 5%">
+                  <img src="images_pdfs/advertising_data_3.PNG" alt="error rate plot" style="border-radius: 5%">
+                </p>
+              </li>
+            </ul>
+          </li>
+      </ul>
     </div>
-    
-    <br>
-    <hr>
-    
-    <h1>List of Projects:</h1>
-
-    <p>
-      These projects are in no particular order. I have attempted to put some of the more interesting projects towards the top. Some of these datasets are very common and have been explored
-      by millions. Even with this in mind, I hope that my conclusions and insight come from an angle for which you have not previously thought.
-    </p>
-    <ul>
-        <li>
-          PIC Math Project with the Nevada National Security Site (NNSS), funded by the NSF:
-          <ul>
-            <li> 
-              <p>
-                This project was part of a PIC Math course at Ouachita Baptist University that was centered around the condition of some of the U.S. nuclear weapons stockpile. We were
-                given an industry liaison, Dr. Marylesa Howard of the NNSS, who is a brilliant mathematician there at the site. She assisted us in the general understanding of the problem at hand
-                and relayed any information from her team at the site in Nevada. 
-              </p>
-            </li>
-            <li>
-              <p>
-                At the NNSS, experiments are conducted on portions of the United States nuclear weapons stockpile to see how they perform after years of isolation without use.
-                Cygnus 1 and Cygnus 2 are two massive, incredibly powerful x-ray machines located at the site, and they are used to take snapshots of these weapons being detonated
-                with other various objects alongside them. These experiments cost tens of millions of dollars to set up in many occasions. If all goes well, the weapons and materials are
-                destroyed and both Cygnus machines have taken their shots without error. Occasionally, Cygnus 1 or Cygnus 2 will have problems as these machines are decades old. If the machines fail 
-                in the midst of an explosion, the millions of dollars put into the experiment have been wasted because there is no way of telling what happened within the explosion, except
-                for the obvious fact that everything has been destroyed. Each machine has 31 diagnostics that are used to determine how each part of the machine performs during the shot.
-                Many hours after a shot, the engineers on site are able to determine how well the machines performed based on the radiation dose each one produced. The higher the radiation, the better.
-              </p>
-            </li>
-            <li>
-              <p>
-                Our job was to predict when the machines would fail, given 100 shots worth of data for each diagnostic. The raw data for each diagnostic always contained two features, for which 
-                there were anywhere from 10,000 to 100,000 observations. We found that much of the data did not match up very well-that is, older data had been measured on different scales than the newer data.
-                This reduced our ability to work with machine learning algorithms. Even 100 shots would be stretching it, but now we were left with few options.
-              </p>
-            </li>
-            <li>
-              <p>
-                I began importing the data into RStudio and started looking at some basic characteristics such as mean, median, maximum, minimum, etc., and I began to notice some correlations between one of 
-                the diagnostics and the overall radiation dose produced by both machines. The diagnostic's maxmimum value turned out to be a very good predictor for the quality of the shot. I began to make plots:
-              </p>
-            </li>
-            <img src="images_pdfs/pic_math1.PNG" alt="Linear Regression for the diagnostic." style="border-radius: 3%;">
-            <li>
-              <p>
-                Here, you can see the radiation dose produced by the machines as a function of the maximum value of the PinM diagnostic. As the PinM diagnostic began to reach larger values, 
-                the machine output a better shot. The R value came out to 0.877, a very strong correlation. Next, we'll view this data with a boxplot for bivariate data:
-              </p>
-            </li>
-            <img src="images_pdfs/pic_math2.PNG" alt="Bivariate Generalization of the boxplot for PinM max values and rad doses." style="border-radius: 3%;">
-            <li>
-              <p>
-                In this plot, I used the aplpack package for R to see if there were any outliers present in the data. Since this is bivariate data, a standard boxplot would not suffice. The aplpack
-                package gives us the ability to use the bagplot() function in order to view this for our data. Notice there are no outliers present. This plot was used to further strengthen the claim that 
-                PinM was a good predictor for how well the machine performed. 
-              </p>
-            </li>
-            <li>
-              <p>
-                We relayed this information to Dr. Marylesa Howard immediately. She had to ask one of the engineers on site for a response. We were told that this diagnostic was actually used 
-                as a way to determine how well the machine performed immediately after a shot because it takes hours for the radiation doses to come back. This was a great accomplishment!
-              </p>
-            </li>
-            <li>
-              <p>
-                With Covid-19 as a backdrop for the semester, it was especially difficult given that we were all remote and unable to meet in person. This is around the time the project came 
-                to a halt. We were unable to reach the goal of predicting when the machines would fail, but our research will certainly benefit the next group that works on this project. Aside from our
-                achievements, Dr. Howard was thankful for our contributions throughout the semester and let us know we were one of the best groups she has ever worked with in the PIC Math program.
-              </p>
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          Phone Data Project: <a href="R_notebooks/probstats_hw1.nb.html">View R Notebook</a>
-          <ul>
-            <li>
-              <p>This data was taken from a fictional problem located on Kaggle.
-                The problem involves a businessman who is attempting to start up his own phone company. He has been
-                gathering data on thousands of different types of phones over the years. His goal is to be able to predict what price
-                range a phone is in given the remaining 20 attributes listed in the structure of this data frame (i.e. battery capacity, phone weight, RAM, etc.).
-            </p>
-            <p>
-              <img src="images_pdfs/phone_data_2.PNG" alt="snippet of data frame" style="border-radius: 5%;">
-              <img src="images_pdfs/phone_data_3.PNG" alt="snippet of ggplot2 example from project" style="border-radius: 5%">
-            </p>
-            </li>
-            <li>
-              <p>
-              In this project, I ran the k-means clustering algorithm on the two most telling attributes and wrote a report at the very end of the notebook based on my observations.
-              </p>
-            </li>
-          </ul>
-        </li>
-
-        <br>
-
-        <li>
-          Loan Data with Support Vector Machines: <a href="R_notebooks/svm_loan_project.nb.html">View R Notebook</a>
-          <ul>
-            <li>
-              <p>
-                The given dataset came from LendingClub.com. The data had certain financial information on people who had taken out loans. The last attribute in this dataset was whether or not 
-                the person ultimately paid off their loans in their entirety. This project had a basic implementation of the svm() function in R. This project originally came from an assignment 
-                I worked on as part of a course on Udemy. 
-              </p>
-              <p>
-                <img src="images_pdfs/loan_data_2.PNG" alt="code snippet" style="border-radius: 5%">
-                <img src="images_pdfs/loan_data_3.PNG" alt="plot snippet" style="border-radius: 5%">
-              </p>
-            </li>
-            <li>
-              <p>
-                The run time for the tune() function became lengthy even with only two values for cost and gamma. I would have run more combinations, but my machine by itself certainly has its limits.
-                With distributed resources, we would be able to produce an even more accurate model.
-              </p>
-            </li>
-          </ul>
-        </li>
-
-        <br>
-
-        <li>
-          Iris Data Set: <a href="R_notebooks/knn_practice2.nb.html">View R Notebook</a>
-          <ul>
-            <li>
-              <p>It's hard to find a data scientist who has never come across the Iris data set. It is a small but super important data set for learning how to implement the k-means clustering
-                algorithm. In this project, I run both the K-means clustering and K-nearest neighbors algorithms. It is obvious that the K-means clustering algorithm does a very good job
-                of predicting the species for each flower. 
-            </p>
-            <p>
-              <img src="images_pdfs/iris_data_2.PNG" alt="silhouette plot" style="border-radius: 5%">
-              <img src="images_pdfs/iris_data_3.PNG" alt="error rate plot" style="border-radius: 5%">
-            </p>
-            </li>
-          </ul>
-        </li>
-
-        <br>
-
-        <li>
-          Advertising Data: <a href="R_notebooks/kmeans_practice.nb.html">View R Notebook</a>
-          <ul>
-            <li>
-              <p>
-                The given dataset has 1,000 records of users with 10 attributes. We are trying to predict whether or not they clicked on an advertisement, which is denoted as 0 or 1 in the 
-                last column of the data frame. We want to find out which users are more likely to click on the advertisements based on the other given characteristics in the data frame.
-              </p>
-              <p>
-                <img src="images_pdfs/advertising_data_2.PNG" alt="impute age function" style="border-radius: 5%">
-                <img src="images_pdfs/advertising_data_3.PNG" alt="error rate plot" style="border-radius: 5%">
-              </p>
-            </li>
-          </ul>
-        </li>
-    </ul>
-
-
-
     <footer>
       Created by Bryan Honeck, 15 February 2021
     </footer>
