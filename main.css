@@ -76,7 +76,7 @@ a:hover {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.mainContentArea, .mainAbout, .mainProjects, .mainHobbies{
+.mainContentArea {
     border: aliceblue;
     border-style: solid;
     width: 75%;
@@ -84,4 +84,27 @@ a:hover {
     padding: 2%;
 }
 
+.mainAbout, .mainProjects, .mainHobbies{
+    border: aliceblue;
+    border-style: solid;
+    width: 92%;
+    margin: 1%;
+    padding: 2%;
+}
+
+
+#clockbox{
+    text-align-last: center;
+}
+
+#astrophotos1, #astrophotos2{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.clockImg{
+    display: flex;
+    justify-content: space-evenly;
+}
 
