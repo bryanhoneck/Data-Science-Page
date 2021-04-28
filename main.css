@@ -92,6 +92,11 @@ a:hover {
     padding: 2%;
 }
 
+#football1, #football2{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3%;
+}
 
 #clockbox{
     text-align-last: center;
